@@ -13,7 +13,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    message=request.form["text"]
+    message=request.form.get("text",False)
     data=[message]
     data=cv.transform(data).toarray()
     pred=model.predict(data)
