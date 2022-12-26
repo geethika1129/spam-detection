@@ -16,7 +16,7 @@ def predict():
     message=request.form['text']
     data=[message]
     data=cv.transform(data).toarray()
-    pred=model.perdict(data)
+    pred=model.predict(data)
     return render_template('result.html',prediction=pred)
 
 if __name__=='__main__':
