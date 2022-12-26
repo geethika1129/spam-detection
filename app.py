@@ -11,7 +11,7 @@ app = Flask(__name__)
 def home():
     return render_template('main.html')
 
-@app.route('/predict',method=['POST'])
+@app.route('/predict',methods=['POST'])
 def predict():
     message=request.form['text']
     data=[message]
